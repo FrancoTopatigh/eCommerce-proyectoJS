@@ -77,7 +77,7 @@ function showCurrentCart (){
 }
 
 function confirmPurchase() {
-    const answer = prompt("Desea comprar alguna camiseta de nuestro catalogo?\n1) Si \n2) No");
+    const answer = prompt("Desea comprar alguna camiseta de nuestro catálogo?\n1) Si, deseo ver su stock \n2) No, quiero volver al sitio web");
     if (answer  == "1"){
         return true;
     } else {
@@ -90,6 +90,7 @@ function showShirts() {
     shirts.forEach(shirt => {
         menuShow += `${shirt.id}) ${shirt.shirtName} - ${shirt.season} - ${shirt.price * iva}\n`;
         // TODO: agregar un MATH.CEIL de la suma de shirt price * iva, para que no de tantos decimales
+        // TODO: Agregar ALERT cuando el usuario selecciona un producto
     })
     let answer = prompt(menuShow);
     return answer;
