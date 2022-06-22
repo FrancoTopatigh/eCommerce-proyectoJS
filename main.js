@@ -33,8 +33,8 @@ class Shirt {
 
 // Objetos
 
-const shirt1 = new Shirt ("1", "Inter Visitante", 21/22, 7499);
-const shirt2 = new Shirt ("2", "Milan Titular", 21/22, 7499);
+const shirt1 = new Shirt ("1", "Inter Visitante", "21/22", 7499);
+const shirt2 = new Shirt ("2", "Milan Titular", "21/22", 7499);
 const shirt3 = new Shirt ("3","Juventus Titular", 22/23, 7899);
 const shirt4 = new Shirt ("4", "Liverpool Titular", 22/23, 8299);
 const shirt5 = new Shirt ("5", "Manchester United", 21/22, 8499);
@@ -56,7 +56,6 @@ let cart = [];
 // Funciones
 
 function addShirtToCart(id) {
-    //  buscar producto en el arreglo de producto y agregarlo al carrito
     const shirtFound = shirts.find(shirt => shirt.id == id);
     cart.push(shirtFound);
 }
@@ -66,7 +65,7 @@ function showCurrentCart (){
 }
 
 function confirmPurchase() {
-    const answer = prompt("Desea comprar alguna camiseta?\n1) Si \n2) No");
+    const answer = prompt("Desea comprar alguna camiseta de nuestro catalogo?\n1) Si \n2) No");
     if (answer  == "1"){
         return true;
     } else {
@@ -78,7 +77,7 @@ function confirmPurchase() {
 function showShirts() {
     let menuShow = "¿Que camiseta desea comprar?\n";
     shirts.forEach(shirt => {
-        menuShow += `${shirt.id}) ${shirt.shirtName} - ${shirt.price}\n`;
+        menuShow += `${shirt.id}) ${shirt.shirtName} - ${shirt.season} - ${shirt.price}\n`;
     })
     let answer = prompt(menuShow);
     return answer;
