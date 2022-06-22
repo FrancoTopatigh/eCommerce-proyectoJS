@@ -48,20 +48,32 @@ const shirt12 = new Shirt ("12", "Borussia Dortmund Titular", "21/22", 8999);
 
 
 // Array
-
 const shirts = [shirt1, shirt2, shirt3, shirt4, shirt5, shirt6, shirt7, shirt8, shirt9, shirt10, shirt11, shirt12];
 
+
 let cart = [];
+
+// Logica para eliminar producto del carrito
+
+const deleteShirt = (shirt) => {
+    let index = shirts.indexOf(shirt);
+
+    if (index !== -1) {
+        shirts.splice(index, 1);
+        alert("Se ha elimado el producto del carrito con exito")
+    }
+}
+
+deleteShirt();
 
 // Funciones
 
 function addShirtToCart(id) {
-    const shirtFound = shirts.find(shirt => shirt.id == id);
-    cart.push(shirtFound);
+    const shirtIdFound = shirts.find(shirt => shirt.id == id);
+    cart.push(shirtIdFound);
 }
 
 function showCurrentCart (){
-
 }
 
 function confirmPurchase() {
@@ -83,7 +95,7 @@ function showShirts() {
     return answer;
 }
 
-
+// Sin esta funcion, no se muestran las demas
 function buyShirt() {
     while (confirmPurchase()) {
         let shirtSelected = showShirts();
@@ -93,6 +105,22 @@ function buyShirt() {
 }
 
 buyShirt();
+
+// Metodos de busqueda y transformacion
+
+const existing = shirts.some (shirt =>shirt.season === "23/24")
+console.log(existing)
+
+const filter = shirts.filter(shirt =>shirt.price <= 8299)
+console.log(filter)
+
+const totalPrice = shirts.reduce((acc,el) => acc + el.price,0)
+console.log("Precio total de todas las camisetas (Incuido IVA): " + totalPrice * iva)
+
+// TODO: hacer un totalPrice2 para sumar el precio + IVA de todo aquello que el usuario compre
+
+
+
 
 
 
