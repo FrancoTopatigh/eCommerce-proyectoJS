@@ -73,11 +73,11 @@ function confirmPurchase() {
     }
 } 
 
-
 function showShirts() {
-    let menuShow = "¿Que camiseta desea comprar?\n";
+    let menuShow = "¿Que camiseta le gustaría comprar, " + name + "?\n";
     shirts.forEach(shirt => {
-        menuShow += `${shirt.id}) ${shirt.shirtName} - ${shirt.season} - ${shirt.price}\n`;
+        menuShow += `${shirt.id}) ${shirt.shirtName} - ${shirt.season} - ${shirt.price * iva}\n`;
+        // TODO: agregar un MATH.CEIL de la suma de shirt price * iva, para que no de tantos decimales
     })
     let answer = prompt(menuShow);
     return answer;
