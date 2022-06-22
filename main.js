@@ -35,16 +35,16 @@ class Shirt {
 
 const shirt1 = new Shirt ("1", "Inter Visitante", "21/22", 7499);
 const shirt2 = new Shirt ("2", "Milan Titular", "21/22", 7499);
-const shirt3 = new Shirt ("3","Juventus Titular", 22/23, 7899);
-const shirt4 = new Shirt ("4", "Liverpool Titular", 22/23, 8299);
-const shirt5 = new Shirt ("5", "Manchester United", 21/22, 8499);
-const shirt6 = new Shirt ("6", "Real Madrid", 22/23, 9499);
-const shirt7 = new Shirt ("7", "Barcelona Titular", 22/23, 8999);
-const shirt8 = new Shirt ("8", "Atletico de Madrid Titular", 21/22, 7999);
-const shirt9 = new Shirt ("9","Racing Titular", 22/23, 7399);
-const shirt10 = new Shirt ("10", "Boca Titular", 21/22, 7399);
-const shirt11 = new Shirt ("11", "PSG Titular", 21/22, 9499);
-const shirt12 = new Shirt ("12", "Borussia Dortmund Titular", 21/22, 8999);
+const shirt3 = new Shirt ("3","Juventus Titular", "22/23", 7899);
+const shirt4 = new Shirt ("4", "Liverpool Titular", "22/23", 8299);
+const shirt5 = new Shirt ("5", "Manchester United", "21/22", 8499);
+const shirt6 = new Shirt ("6", "Real Madrid", "22/23", 9499);
+const shirt7 = new Shirt ("7", "Barcelona Titular", "22/23", 8999);
+const shirt8 = new Shirt ("8", "Atletico de Madrid Titular", "21/22", 7999);
+const shirt9 = new Shirt ("9","Racing Titular", "22/23", 7399);
+const shirt10 = new Shirt ("10", "Boca Titular", "21/22", 7399);
+const shirt11 = new Shirt ("11", "PSG Titular", "21/22", 9499);
+const shirt12 = new Shirt ("12", "Borussia Dortmund Titular", "21/22", 8999);
 
 
 // Array
