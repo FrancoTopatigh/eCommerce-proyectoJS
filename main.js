@@ -19,12 +19,13 @@ const iva = 1.21;
 // Class y constructor
 
 class Shirt {
-    constructor (id, shirtName, season, price, league) {
+    constructor (id, shirtName, season, price, league, all) {
         this.id = id;
         this.shirtName = shirtName;
         this.season = season;
         this.price = price;
         this.league = league;
+        this.all = all;
     }
 
     priceCalculator (){
@@ -34,18 +35,18 @@ class Shirt {
 
 // Objetos
 
-const shirt1 = new Shirt ("1", "Inter Visitante", "21/22", 8499, "Liga Italiana");
-const shirt2 = new Shirt ("2", "Milan Titular", "21/22", 8499, "Liga Italiana");
-const shirt3 = new Shirt ("3","Juventus Titular", "22/23", 8999, "Liga Italiana");
-const shirt4 = new Shirt ("4", "Manchester City Titular", "22/23", 9699,"Liga Inglesa");
-const shirt5 = new Shirt ("5", "Manchester United Titular", "21/22", 8499, "Liga Inglesa");
-const shirt6 = new Shirt ("6", "Real Madrid Titular", "22/23", 9999, "Liga Española");
-const shirt7 = new Shirt ("7", "Barcelona Titular", "22/23", 9999, "Liga Española");
-const shirt8 = new Shirt ("8", "Atletico de Madrid Titular", "21/22", 7999, "Liga Española");
-const shirt9 = new Shirt ("9","Porto Titular", "22/23", 7999, "Liga Portuguesa");
-const shirt10 = new Shirt ("10", "Benfica Titular", "22/23", 7999, "Liga Portuguesa");
-const shirt11 = new Shirt ("11", "Borussia Dortmund Titular", "22/23", 9499, "Liga Alemana");
-const shirt12 = new Shirt ("12", "Bayern Munchen Titular", "22/23", 9999, "Liga Alemana");
+const shirt1 = new Shirt ("1", "Inter Visitante", "21/22", 8499, "Liga Italiana", "allProducts");
+const shirt2 = new Shirt ("2", "Milan Titular", "21/22", 8499, "Liga Italiana", "allProducts");
+const shirt3 = new Shirt ("3","Juventus Titular", "22/23", 8999, "Liga Italiana", "allProducts");
+const shirt4 = new Shirt ("4", "Manchester City Titular", "22/23", 9699,"Liga Inglesa", "allProducts");
+const shirt5 = new Shirt ("5", "Manchester United Titular", "21/22", 8499, "Liga Inglesa", "allProducts");
+const shirt6 = new Shirt ("6", "Real Madrid Titular", "22/23", 9999, "Liga Española", "allProducts");
+const shirt7 = new Shirt ("7", "Barcelona Titular", "22/23", 9999, "Liga Española", "allProducts");
+const shirt8 = new Shirt ("8", "Atletico de Madrid Titular", "21/22", 7999, "Liga Española", "allProducts");
+const shirt9 = new Shirt ("9","Porto Titular", "22/23", 7999, "Liga Portuguesa", "allProducts");
+const shirt10 = new Shirt ("10", "Benfica Titular", "22/23", 7999, "Liga Portuguesa","allProducts");
+const shirt11 = new Shirt ("11", "Borussia Dortmund Titular", "22/23", 9499, "Liga Alemana", "allProducts");
+const shirt12 = new Shirt ("12", "Bayern Munchen Titular", "22/23", 9999, "Liga Alemana", "allProducts");
 
 
 // Array
@@ -68,6 +69,19 @@ const deleteShirt = (shirt) => {
 deleteShirt();
 
 // Funciones
+
+//  Funciones filtrado POR LIGA
+function filterByLeague(league){
+    const newFilter = shirts.filter((shirt) => shirt.league == league)
+    cards(newFilter)
+}
+
+// Funcion MOSTRAR TODOS LOS PRODUCTOS
+function showAllTheProducts(show){
+    const newFilter2 = shirts.filter((shirt) => shirt.show == show)
+    cards(newFilter2)
+}
+
 
 function addShirtToCart(id) {
     const shirtIdFound = shirts.find(shirt => shirt.id == id);
@@ -107,6 +121,18 @@ function buyShirt() {
 }
 
 buyShirt();
+
+// CARDS
+// TODO: PASAR TODO A DOM 
+function cards(showAllTheProducts){
+    let acumulador = ``;
+    showAllTheProducts.forEach((product) => {
+        acumulador += ``
+    })
+}
+
+
+
 
 // Metodos de busqueda y transformacion
 
