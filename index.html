@@ -21,7 +21,7 @@
 <header>
     <div class="main-title">
         <h1 href="index.html">CANEBOLA</h1>
-        <button class="btnCart">Carrito</button>
+        <button class="btnCart" id="cartShirt">Carrito</button>
     </div>
 
 
@@ -56,96 +56,99 @@
 
 <body>
 
-    <!-- PRODUCTOS -->
-    <div class="page-content">
-        <div class="product-container">
-            <img src="img/inter-shirt.jpg" alt="Camiseta de Internazionale Milano">
-            <h3>Inter Visitante 21/22</h3>
-            <h3>$8.499</h3>
-            <button>Agregar</button>
-        </div>    
+    <main>
+        <div id="card-container"></div>
+            <!-- PRODUCTOS -->
+            <!-- <div class="page-content">
+                <div class="product-container">
+                    <img src="img/inter-shirt.jpg" alt="Camiseta de Internazionale Milano">
+                    <h3>Inter Visitante 21/22</h3>
+                    <h3>$8.499</h3>
+                    <button>Agregar</button>
+                </div>    
 
-        <div class="product-container">
-            <img src="img/milan-shirt.jpg" alt="Camiseta de Milan">
-            <h3>Milan Titular 21/22</h3>
-            <h3>$8.499</h3>
-            <button>Agregar</button>
-        </div>
+                <div class="product-container">
+                    <img src="img/milan-shirt.jpg" alt="Camiseta de Milan">
+                    <h3>Milan Titular 21/22</h3>
+                    <h3>$8.499</h3>
+                    <button>Agregar</button>
+                </div>
 
-        <div class="product-container">
-            <img src="img/juve-shirt.png" alt="Camiseta de Juventus">
-            <h3>Juventus Titular 22/23</h3>
-            <h3>$8.999</h3>
-            <button>Agregar</button>
-        </div>
+                <div class="product-container">
+                    <img src="img/juve-shirt.png" alt="Camiseta de Juventus">
+                    <h3>Juventus Titular 22/23</h3>
+                    <h3>$8.999</h3>
+                    <button>Agregar</button>
+                </div>
 
-        <div class="product-container">
-            <img src="img/city-shirt.png" alt="Camiseta del Manchester City">
-            <h3>Manchester City Titular 22/23</h3>
-            <h3>$9.699</h3>
-            <button>Agregar</button>
-        </div>
-
-
-        <div class="product-container">
-            <img src="img/united-shirt.png" alt="Camiseta del Manchester Utd">
-            <h3>Manchester United Titular 21/22</h3>
-            <h3>$8.499</h3>
-            <button>Agregar</button>
-        </div>
+                <div class="product-container">
+                    <img src="img/city-shirt.png" alt="Camiseta del Manchester City">
+                    <h3>Manchester City Titular 22/23</h3>
+                    <h3>$9.699</h3>
+                    <button>Agregar</button>
+                </div>
 
 
-        <div class="product-container">
-            <img src="img/madrid-shirt.webp" alt="Camiseta de Real Madrid">
-            <h3>Real Madrid Titular 22/23</h3>
-            <h3>$9.999</h3>
-            <button>Agregar</button>
-        </div>
+                <div class="product-container">
+                    <img src="img/united-shirt.png" alt="Camiseta del Manchester Utd">
+                    <h3>Manchester United Titular 21/22</h3>
+                    <h3>$8.499</h3>
+                    <button>Agregar</button>
+                </div>
 
 
-        <div class="product-container">
-            <img src="img/barcelona-shirt.png" alt="Camiseta de Barcelona">
-            <h3>Barcelona Titular 22/23</h3>
-            <h3>$9.999</h3>
-            <button>Agregar</button>
-        </div>
+                <div class="product-container">
+                    <img src="img/madrid-shirt.webp" alt="Camiseta de Real Madrid">
+                    <h3>Real Madrid Titular 22/23</h3>
+                    <h3>$9.999</h3>
+                    <button>Agregar</button>
+                </div>
 
-        <div class="product-container">
-            <img src="img/atletico-shirt.jpg" alt="Camiseta de Atletico Madrid">
-            <h3>Atletico de Madrid Titular 21/22</h3>
-            <h3>$7.999</h3>
-            <button>Agregar</button>
-        </div>
 
-        <div class="product-container">
-            <img src="img/porto-shirt.png" alt="Camiseta de Porto">
-            <h3>Porto Titular 22/23</h3>
-            <h3>$7.999</h3>
-            <button>Agregar</button>
-        </div>
+                <div class="product-container">
+                    <img src="img/barcelona-shirt.png" alt="Camiseta de Barcelona">
+                    <h3>Barcelona Titular 22/23</h3>
+                    <h3>$9.999</h3>
+                    <button>Agregar</button>
+                </div>
 
-        <div class="product-container">
-            <img src="img/benfica-shirt.png" alt="Camiseta de Benfica">
-            <h3>Benfica Titular 22/23</h3>
-            <h3>$7.999</h3>
-            <button>Agregar</button>
-        </div>
+                <div class="product-container">
+                    <img src="img/atletico-shirt.jpg" alt="Camiseta de Atletico Madrid">
+                    <h3>Atletico de Madrid Titular 21/22</h3>
+                    <h3>$7.999</h3>
+                    <button>Agregar</button>
+                </div>
 
-        <div class="product-container">
-            <img src="img/bvb-shirt.png" alt="Camiseta de Borussia Dortmund">
-            <h3>Borussia Dortmund Titular 22/23</h3>
-            <h3>$9.499</h3>
-            <button>Agregar</button>
-        </div>
+                <div class="product-container">
+                    <img src="img/porto-shirt.png" alt="Camiseta de Porto">
+                    <h3>Porto Titular 22/23</h3>
+                    <h3>$7.999</h3>
+                    <button>Agregar</button>
+                </div>
 
-        <div class="product-container">
-            <img src="img/bayernMunchen-shirt.png" alt="Camiseta de Bayern Munchen">
-            <h3>Bayern Munich Titular 22/23</h3>
-            <h3>$9.999</h3>
-            <button>Agregar</button>
-        </div>
+                <div class="product-container">
+                    <img src="img/benfica-shirt.png" alt="Camiseta de Benfica">
+                    <h3>Benfica Titular 22/23</h3>
+                    <h3>$7.999</h3>
+                    <button>Agregar</button>
+                </div>
 
-    </div>
+                <div class="product-container">
+                    <img src="img/bvb-shirt.png" alt="Camiseta de Borussia Dortmund">
+                    <h3>Borussia Dortmund Titular 22/23</h3>
+                    <h3>$9.499</h3>
+                    <button>Agregar</button>
+                </div>
+
+                <div class="product-container">
+                    <img src="img/bayernMunchen-shirt.png" alt="Camiseta de Bayern Munchen">
+                    <h3>Bayern Munich Titular 22/23</h3>
+                    <h3>$9.999</h3>
+                    <button>Agregar</button>
+                </div>
+
+            </div> -->
+    </main>
 
 
 

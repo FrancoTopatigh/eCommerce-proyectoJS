@@ -52,8 +52,105 @@ const shirt12 = new Shirt ("12", "Bayern Munchen Titular", "22/23", 9999, "Liga 
 // Array
 const shirts = [shirt1, shirt2, shirt3, shirt4, shirt5, shirt6, shirt7, shirt8, shirt9, shirt10, shirt11, shirt12];
 
-
 let cart = [];
+
+// DOM - CARDS
+let acumulador = ``;
+shirts.forEach((shirt) => {
+    acumulador += `<div class="page-content">
+    <div class="product-container">
+        <img src="img/inter-shirt.jpg" alt="Camiseta de Internazionale Milano">
+        <h3>${shirt1.shirtName}- ${shirt1.season}</h3>
+        <h3>$${shirt1.price}</h3>
+        <button onclick="addShirtToCart(${shirt1.id})">Agregar al carrito</button>
+    </div>    
+
+    <div class="product-container">
+        <img src="img/milan-shirt.jpg" alt="Camiseta de Milan">
+        <h3>${shirt2.shirtName}- ${shirt2.season}</h3>
+        <h3>$${shirt2.price}</h3>
+        <button onclick="addShirtToCart(${shirt2.id})">Agregar</button>
+    </div>
+
+    <div class="product-container">
+        <img src="img/juve-shirt.png" alt="Camiseta de Juventus">
+        <h3>${shirt3.shirtName}- ${shirt3.season}</h3>
+        <h3>$${shirt3.price}</h3>
+        <button onclick="addShirtToCart(${shirt3.id})">Agregar</button>
+    </div>
+
+    <div class="product-container">
+        <img src="img/city-shirt.png" alt="Camiseta del Manchester City">
+        <h3>${shirt4.shirtName}- ${shirt4.season}</h3>
+        <h3>$${shirt4.price}</h3>
+        <button onclick="addShirtToCart(${shirt4.id})">Agregar</button>
+    </div>
+
+
+    <div class="product-container">
+        <img src="img/united-shirt.png" alt="Camiseta del Manchester Utd">
+        <h3>${shirt5.shirtName}- ${shirt5.season}</h3>
+        <h3>$${shirt5.price}</h3>
+        <button onclick="addShirtToCart(${shirt5.id})">Agregar</button>
+    </div>
+
+
+    <div class="product-container">
+        <img src="img/madrid-shirt.webp" alt="Camiseta de Real Madrid">
+        <h3>${shirt6.shirtName}- ${shirt6.season}</h3>
+        <h3>$${shirt6.price}</h3>
+        <button onclick="addShirtToCart(${shirt6.id})">Agregar</button>
+    </div>
+
+
+    <div class="product-container">
+        <img src="img/barcelona-shirt.png" alt="Camiseta de Barcelona">
+        <h3>${shirt7.shirtName}- ${shirt7.season}</h3>
+        <h3>$${shirt7.price}</h3>
+        <button onclick="addShirtToCart(${shirt7.id})">Agregar</button>
+    </div>
+
+    <div class="product-container">
+        <img src="img/atletico-shirt.jpg" alt="Camiseta de Atletico Madrid">
+        <h3>${shirt8.shirtName}- ${shirt8.season}</h3>
+        <h3>$${shirt8.price}</h3>
+        <button onclick="addShirtToCart(${shirt8.id})">Agregar</button>
+    </div>
+
+    <div class="product-container">
+        <img src="img/porto-shirt.png" alt="Camiseta de Porto">
+        <h3>${shirt9.shirtName}- ${shirt9.season}</h3>
+        <h3>$${shirt9.price}</h3>
+        <button onclick="addShirtToCart(${shirt9.id})">Agregar</button>
+    </div>
+
+    <div class="product-container">
+        <img src="img/benfica-shirt.png" alt="Camiseta de Benfica">
+        <h3>${shirt10.shirtName}- ${shirt10.season}</h3>
+        <h3>$${shirt10.price}</h3>
+        <button onclick="addShirtToCart(${shirt10.id})">Agregar</button>
+    </div>
+
+    <div class="product-container">
+        <img src="img/bvb-shirt.png" alt="Camiseta de Borussia Dortmund">
+        <h3>${shirt11.shirtName}- ${shirt11.season}</h3>
+        <h3>$${shirt11.price}</h3>
+        <button onclick="addShirtToCart(${shirt11.id})">Agregar</button>
+    </div>
+
+    <div class="product-container">
+        <img src="img/bayernMunchen-shirt.png" alt="Camiseta de Bayern Munchen">
+        <h3>${shirt12.shirtName}- ${shirt12.season}</h3>
+        <h3>$${shirt12.price}</h3>
+        <button onclick="addShirtToCart(${shirt12.id})">Agregar</button>
+    </div>
+
+</div>`
+})
+
+document.getElementById('card-container').innerHTML = acumulador
+
+
 
 // Logica para eliminar producto del carrito
 
@@ -77,59 +174,19 @@ function filterByLeague(league){
 }
 
 // Funcion MOSTRAR TODOS LOS PRODUCTOS
-function showAllTheProducts(show){
-    const newFilter2 = shirts.filter((shirt) => shirt.show == show)
+function showAllTheProducts(all){
+    const newFilter2 = shirts.filter((shirt) => shirt.all == all)
     cards(newFilter2)
 }
 
-
+// Funcion AGREGAR al CARRITO
 function addShirtToCart(id) {
-    const shirtIdFound = shirts.find(shirt => shirt.id == id);
+    const shirtIdFound = shirts.find((shirt) => shirt.id == id);
     cart.push(shirtIdFound);
+    const totalCart = cart.reduce((acumulador, shirt) => acumulador + shirt.price, 0);
+    document.getElementById("cartShirt").innerHTML = cart.length + "- $" + totalCart;
 }
 
-function showCurrentCart (){
-}
-
-function confirmPurchase() {
-    const answer = prompt("Desea comprar alguna camiseta de nuestro catálogo?\n1) Si, deseo ver su stock \n2) No, quiero volver al sitio web");
-    if (answer  == "1"){
-        return true;
-    } else {
-        return false;
-    }
-} 
-
-function showShirts() {
-    let menuShow = "¿Que camiseta le gustaría comprar, " + name + "?\n";
-    shirts.forEach(shirt => {
-        menuShow += `${shirt.id}) ${shirt.shirtName} - ${shirt.season} - ${shirt.price * iva}\n`;
-        // TODO: agregar un MATH.CEIL de la suma de shirt price * iva, para que no de tantos decimales
-        // TODO: Agregar ALERT cuando el usuario selecciona un producto
-    })
-    let answer = prompt(menuShow);
-    return answer;
-}
-
-// Sin esta funcion, no se muestran las demas
-function buyShirt() {
-    while (confirmPurchase()) {
-        let shirtSelected = showShirts();
-        addShirtToCart(shirtSelected);
-        showCurrentCart();
-    }
-}
-
-buyShirt();
-
-// CARDS
-// TODO: PASAR TODO A DOM 
-function cards(showAllTheProducts){
-    let acumulador = ``;
-    showAllTheProducts.forEach((product) => {
-        acumulador += ``
-    })
-}
 
 
 
