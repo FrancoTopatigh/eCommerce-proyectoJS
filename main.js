@@ -19,11 +19,12 @@ const iva = 1.21;
 // Class y constructor
 
 class Shirt {
-    constructor (id, shirtName, season, price) {
+    constructor (id, shirtName, season, price, league) {
         this.id = id;
         this.shirtName = shirtName;
         this.season = season;
         this.price = price;
+        this.league = league;
     }
 
     priceCalculator (){
@@ -33,18 +34,18 @@ class Shirt {
 
 // Objetos
 
-const shirt1 = new Shirt ("1", "Inter Visitante", "21/22", 8499);
-const shirt2 = new Shirt ("2", "Milan Titular", "21/22", 8499);
-const shirt3 = new Shirt ("3","Juventus Titular", "22/23", 8999);
-const shirt4 = new Shirt ("4", "Liverpool Titular", "22/23", 8299);
-const shirt5 = new Shirt ("5", "Manchester United", "21/22", 8499);
-const shirt6 = new Shirt ("6", "Real Madrid", "22/23", 9999);
-const shirt7 = new Shirt ("7", "Barcelona Titular", "22/23", 9999);
-const shirt8 = new Shirt ("8", "Atletico de Madrid Titular", "21/22", 7999);
-const shirt9 = new Shirt ("9","Porto Titular", "22/23", 7999);
-const shirt10 = new Shirt ("10", "Benfica Titular", "22/23", 7999);
-const shirt11 = new Shirt ("11", "Borussia Dortmund Titular", "22/23", 9499);
-const shirt12 = new Shirt ("12", "Bayern Munchen Titular", "22/23", 9999);
+const shirt1 = new Shirt ("1", "Inter Visitante", "21/22", 8499, "Liga Italiana");
+const shirt2 = new Shirt ("2", "Milan Titular", "21/22", 8499, "Liga Italiana");
+const shirt3 = new Shirt ("3","Juventus Titular", "22/23", 8999, "Liga Italiana");
+const shirt4 = new Shirt ("4", "Liverpool Titular", "22/23", 8299,"Liga Inglesa");
+const shirt5 = new Shirt ("5", "Manchester United", "21/22", 8499, "Liga Inglesa");
+const shirt6 = new Shirt ("6", "Real Madrid", "22/23", 9999, "Liga Española");
+const shirt7 = new Shirt ("7", "Barcelona Titular", "22/23", 9999, "Liga Española");
+const shirt8 = new Shirt ("8", "Atletico de Madrid Titular", "21/22", 7999, "Liga Española");
+const shirt9 = new Shirt ("9","Porto Titular", "22/23", 7999, "Liga Portuguesa");
+const shirt10 = new Shirt ("10", "Benfica Titular", "22/23", 7999, "Liga Portuguesa");
+const shirt11 = new Shirt ("11", "Borussia Dortmund Titular", "22/23", 9499, "Liga Alemana");
+const shirt12 = new Shirt ("12", "Bayern Munchen Titular", "22/23", 9999, "Liga Alemana");
 
 
 // Array
