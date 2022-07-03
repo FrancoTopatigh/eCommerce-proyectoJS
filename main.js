@@ -37,9 +37,9 @@ class Shirt {
 const shirt1 = new Shirt ("1", "Inter Visitante", "21/22", 8499, "Liga Italiana");
 const shirt2 = new Shirt ("2", "Milan Titular", "21/22", 8499, "Liga Italiana");
 const shirt3 = new Shirt ("3","Juventus Titular", "22/23", 8999, "Liga Italiana");
-const shirt4 = new Shirt ("4", "Liverpool Titular", "22/23", 8299,"Liga Inglesa");
-const shirt5 = new Shirt ("5", "Manchester United", "21/22", 8499, "Liga Inglesa");
-const shirt6 = new Shirt ("6", "Real Madrid", "22/23", 9999, "Liga Española");
+const shirt4 = new Shirt ("4", "Manchester City Titular", "22/23", 9699,"Liga Inglesa");
+const shirt5 = new Shirt ("5", "Manchester United Titular", "21/22", 8499, "Liga Inglesa");
+const shirt6 = new Shirt ("6", "Real Madrid Titular", "22/23", 9999, "Liga Española");
 const shirt7 = new Shirt ("7", "Barcelona Titular", "22/23", 9999, "Liga Española");
 const shirt8 = new Shirt ("8", "Atletico de Madrid Titular", "21/22", 7999, "Liga Española");
 const shirt9 = new Shirt ("9","Porto Titular", "22/23", 7999, "Liga Portuguesa");
