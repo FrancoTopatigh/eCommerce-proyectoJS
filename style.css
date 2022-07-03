@@ -12,6 +12,7 @@
     color: white;
     padding: 15px;
     font-family: 'Raleway', sans-serif;
+    position: relative;
 }
 
 header ul{
@@ -27,6 +28,21 @@ a{
 
 
 /* BODY */
+
+.btnCart{
+    font-size: 18px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px 10px;
+    color: white;
+    background: black;
+    border: 2px solid white;
+    position: absolute;
+    right: 15px;
+    bottom: 16px;
+}
+
+
 
 /* PRODUCTOS */
 
