@@ -49,7 +49,7 @@ function showCards(shirtsToShow){
         shirtsToShow.forEach((shirt) => {
             acumulador += `<div class="page-content">
             <div class="product-container">
-            <img src="img/inter-shirt.jpg" alt="Camiseta de Internazionale Milano">
+            <img class="img-1" src="img/inter-shirt.jpg" alt="Camiseta de Internazionale Milano">
             <h3>${shirt1.shirtName}- ${shirt1.season}</h3>
             <h3>$${shirt1.price}</h3>
             <button onclick="addShirtToCart(${shirt1.id})">Agregar al carrito</button>

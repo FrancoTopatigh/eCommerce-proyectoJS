@@ -80,3 +80,45 @@ a{
     text-align: center;
     font-size: 20px;
 }
+
+
+
+/* RESPONSIVE  */
+
+@media only screen and (max-width: 600px)
+{
+    h1{
+        font-size:25px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    /* BTN CART */
+    .btnCart{
+        font-size: 10px;
+        width: 30%;
+    }
+
+    .nav-item{
+        font-size: 14px;
+    }
+
+    /* BODY */
+    .page-content{
+        display: flexbox;
+    }
+}
+
+@media only screen and (max-width: 768px)
+{
+
+}
+
+@media only screen and (max-width: 992px)
+{
+
+}
+
+@media only screen and (max-width:1200px)
+{
+    
+}
