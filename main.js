@@ -49,90 +49,90 @@ function showCards(shirtsToShow){
         shirtsToShow.forEach((shirt) => {
             acumulador += `<div class="page-content">
             <div class="product-container">
-            <img class="img-1" src="img/inter-shirt.jpg" alt="Camiseta de Internazionale Milano">
-            <h3>${shirt1.shirtName}- ${shirt1.season}</h3>
+            <img src="img/inter-shirt.jpg" alt="Camiseta de Internazionale Milano">
+            <h3>${shirt1.shirtName} - ${shirt1.season}</h3>
             <h3>$${shirt1.price}</h3>
-            <button onclick="addShirtToCart(${shirt1.id})">Agregar al carrito</button>
+            <button class="btnAddToCart" onclick="addShirtToCart(${shirt1.id})">Agregar al carrito</button>
         </div>    
 
         <div class="product-container">
         <img src="img/milan-shirt.jpg" alt="Camiseta de Milan">
-        <h3>${shirt2.shirtName}- ${shirt2.season}</h3>
+        <h3>${shirt2.shirtName} - ${shirt2.season}</h3>
         <h3>$${shirt2.price}</h3>
-        <button onclick="addShirtToCart(${shirt2.id})">Agregar</button>
+        <button class="btnAddToCart" onclick="addShirtToCart(${shirt2.id})">Agregar al carrito</button>
         </div>
         
         <div class="product-container">
-        <img src="img/juve-shirt.png" alt="Camiseta de Juventus">
-        <h3>${shirt3.shirtName}- ${shirt3.season}</h3>
+        <img class="juve-shirt" src="img/juve-shirt.png" alt="Camiseta de Juventus">
+        <h3>${shirt3.shirtName} - ${shirt3.season}</h3>
         <h3>$${shirt3.price}</h3>
-        <button onclick="addShirtToCart(${shirt3.id})">Agregar</button>
+        <button class="btnAddToCart" onclick="addShirtToCart(${shirt3.id})">Agregar al carrito</button>
         </div>
         
         <div class="product-container">
         <img src="img/city-shirt.png" alt="Camiseta del Manchester City">
-        <h3>${shirt4.shirtName}- ${shirt4.season}</h3>
+        <h3>${shirt4.shirtName} - ${shirt4.season}</h3>
         <h3>$${shirt4.price}</h3>
-        <button onclick="addShirtToCart(${shirt4.id})">Agregar</button>
+        <button class="btnAddToCart" onclick="addShirtToCart(${shirt4.id})">Agregar al carrito</button>
         </div>
         
         
         <div class="product-container">
         <img src="img/united-shirt.png" alt="Camiseta del Manchester Utd">
-        <h3>${shirt5.shirtName}- ${shirt5.season}</h3>
+        <h3>${shirt5.shirtName} - ${shirt5.season}</h3>
         <h3>$${shirt5.price}</h3>
-        <button onclick="addShirtToCart(${shirt5.id})">Agregar</button>
+        <button class="btnAddToCart" onclick="addShirtToCart(${shirt5.id})">Agregar al carrito</button>
         </div>
         
 
         <div class="product-container">
             <img src="img/madrid-shirt.webp" alt="Camiseta de Real Madrid">
-            <h3>${shirt6.shirtName}- ${shirt6.season}</h3>
+            <h3>${shirt6.shirtName} - ${shirt6.season}</h3>
             <h3>$${shirt6.price}</h3>
-            <button onclick="addShirtToCart(${shirt6.id})">Agregar</button>
+            <button class="btnAddToCart" onclick="addShirtToCart(${shirt6.id})">Agregar al carrito</button>
             </div>
             
             
             <div class="product-container">
             <img src="img/barcelona-shirt.png" alt="Camiseta de Barcelona">
-            <h3>${shirt7.shirtName}- ${shirt7.season}</h3>
+            <h3>${shirt7.shirtName} - ${shirt7.season}</h3>
             <h3>$${shirt7.price}</h3>
-            <button onclick="addShirtToCart(${shirt7.id})">Agregar</button>
+            <button class="btnAddToCart" onclick="addShirtToCart(${shirt7.id})">Agregar al carrito</button>
             </div>
 
         <div class="product-container">
             <img src="img/atletico-shirt.jpg" alt="Camiseta de Atletico Madrid">
-            <h3>${shirt8.shirtName}- ${shirt8.season}</h3>
+            <h3>${shirt8.shirtName} - ${shirt8.season}</h3>
             <h3>$${shirt8.price}</h3>
-            <button onclick="addShirtToCart(${shirt8.id})">Agregar</button>
+            <button class="btnAddToCart" onclick="addShirtToCart(${shirt8.id})">Agregar al carrito</button>
             </div>
             
             <div class="product-container">
             <img src="img/porto-shirt.png" alt="Camiseta de Porto">
-            <h3>${shirt9.shirtName}- ${shirt9.season}</h3>
+            <h3>${shirt9.shirtName} - ${shirt9.season}</h3>
             <h3>$${shirt9.price}</h3>
-            <button onclick="addShirtToCart(${shirt9.id})">Agregar</button>
+            <button class="btnAddToCart" onclick="addShirtToCart(${shirt9.id})">Agregar al carrito</button>
             </div>
             
             <div class="product-container">
             <img src="img/benfica-shirt.png" alt="Camiseta de Benfica">
-            <h3>${shirt10.shirtName}- ${shirt10.season}</h3>
+            <h3>${shirt10.shirtName} - ${shirt10.season}</h3>
             <h3>$${shirt10.price}</h3>
-            <button onclick="addShirtToCart(${shirt10.id})">Agregar</button>
+            <button class="btnAddToCart" onclick="addShirtToCart(${shirt10.id})">Agregar al carrito</button>
             </div>
             
             <div class="product-container">
             <img src="img/bvb-shirt.png" alt="Camiseta de Borussia Dortmund">
-            <h3>${shirt11.shirtName}- ${shirt11.season}</h3>
+            <h3>${shirt11.shirtName} - ${shirt11.season}</h3>
             <h3>$${shirt11.price}</h3>
-            <button onclick="addShirtToCart(${shirt11.id})">Agregar</button>
+            <button class="btnAddToCart" onclick="addShirtToCart(${shirt11.id})">Agregar al carrito</button>
             </div>
             
             <div class="product-container">
             <img src="img/bayernMunchen-shirt.png" alt="Camiseta de Bayern Munchen">
-            <h3>${shirt12.shirtName}- ${shirt12.season}</h3>
+            <h3>${shirt12.shirtName} - ${shirt12.season}</h3>
             <h3>$${shirt12.price}</h3>
-            <button onclick="addShirtToCart(${shirt12.id})">Agregar</button>
+            <button class="btnAddToCart" onclick="addShirtToCart(${shirt12.id})">Agregar al carrito</button>
             </div>
             
             </div>`
