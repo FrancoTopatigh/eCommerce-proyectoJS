@@ -15,6 +15,12 @@
     position: relative;
 }
 
+h1 a{
+    color: white;
+    background-color: black;
+    font-size: 32px;
+}
+
 header ul{
     background-color: #50bb52;
     padding: 15px;
@@ -97,19 +103,19 @@ a{
 
 @media only screen and (max-width: 600px)
 {
-    h1{
-        font-size:25px;
+    h1 a{
+        font-size:22px;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 
     /* BTN CART */
     .btnCart{
-        font-size: 10px;
-        width: 30%;
+        font-size: 16px;
+        width: 37%;
     }
 
     .nav-item{
-        font-size: 14px;
+        font-size: 13px;
     }
 
     /* BODY */
@@ -120,7 +126,7 @@ a{
     }
 
     .product-container{
-        padding: 10px;
+        padding: 16px;
         margin-top: 20px
     }
     
@@ -130,9 +136,14 @@ a{
     }
     
     .product-container h3{
-        margin: 6px;
+        margin: 10px;
         font-size: 10px;
         text-align: center;
+    }
+
+    /* BOTON AGREGAR AL CART */
+    .btnAddToCart{
+        font-size: 12px;
     }
 
     /* FOOTER */
@@ -145,12 +156,112 @@ a{
 
 @media only screen and (max-width: 768px)
 {
+    h1 a{
+        font-size:24px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-left: 8px;
+    }
 
+    /* BTN CART */
+    .btnCart{
+        font-size: 18px;
+        width: 30%;
+    }
+
+    .nav-item{
+        font-size: 17px;
+    }
+
+    /* BODY */
+    .page-content{
+        display: flex;
+        flex-wrap: wrap;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .product-container{
+        padding: 6px;
+        margin-top: 20px
+    }
+    
+    .product-container img{
+        width: 150px;
+        height: 150px;
+    }
+    
+    .product-container h3{
+        margin: 10px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    /* BOTON AGREGAR AL CART */
+    .btnAddToCart{
+        font-size: 14px;
+    }
+
+    /* FOOTER */
+    #footer{
+        padding: 10px;
+        margin-top: 10px;
+        font-size: 18px;
+    }
 }
+
+
 
 @media only screen and (max-width: 992px)
 {
+    h1 a{
+        font-size:24px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-left: 10px;
+    }
 
+    /* BTN CART */
+    .btnCart{
+        font-size: 18px;
+        width: 30%;
+    }
+
+    .nav-item{
+        font-size: 20px;
+    }
+
+    /* BODY */
+    .page-content{
+        display: flex;
+        flex-wrap: wrap;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .product-container{
+        padding: 6px;
+        margin-top: 20px
+    }
+    
+    .product-container img{
+        width: 150px;
+        height: 150px;
+    }
+    
+    .product-container h3{
+        margin: 7px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    /* BOTON AGREGAR AL CART */
+    .btnAddToCart{
+        font-size: 14px;
+    }
+
+    /* FOOTER */
+    #footer{
+        padding: 10px;
+        margin-top: 10px;
+        font-size: 18px;
+    }
 }
 
 @media only screen and (max-width:1200px)

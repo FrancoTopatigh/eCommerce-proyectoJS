@@ -8,13 +8,14 @@ let cart = [];
 // Class y constructor
 
 class Shirt {
-    constructor (id, shirtName, season, price, league, all) {
+    constructor (id, shirtName, season, price, league, all, img) {
         this.id = id;
         this.shirtName = shirtName;
         this.season = season;
         this.price = price;
         this.league = league;
         this.all = all;
+        this.img = img
     }
 
     priceCalculator (){
@@ -24,18 +25,18 @@ class Shirt {
 
 // Objetos
 
-const shirt1 = new Shirt ("1", "Inter Visitante", "21/22", 8499, "Liga Italiana", "allProducts");
-const shirt2 = new Shirt ("2", "Milan Titular", "21/22", 8499, "Liga Italiana", "allProducts");
-const shirt3 = new Shirt ("3","Juventus Titular", "22/23", 8999, "Liga Italiana", "allProducts");
-const shirt4 = new Shirt ("4", "Manchester City Titular", "22/23", 9699,"Liga Inglesa", "allProducts");
-const shirt5 = new Shirt ("5", "Manchester United Titular", "21/22", 8499, "Liga Inglesa", "allProducts");
-const shirt6 = new Shirt ("6", "Real Madrid Titular", "22/23", 9999, "Liga Española", "allProducts");
-const shirt7 = new Shirt ("7", "Barcelona Titular", "22/23", 9999, "Liga Española", "allProducts");
-const shirt8 = new Shirt ("8", "Atletico de Madrid Titular", "21/22", 7999, "Liga Española", "allProducts");
-const shirt9 = new Shirt ("9","Porto Titular", "22/23", 7999, "Liga Portuguesa", "allProducts");
-const shirt10 = new Shirt ("10", "Benfica Titular", "22/23", 7999, "Liga Portuguesa","allProducts");
-const shirt11 = new Shirt ("11", "Borussia Dortmund Titular", "22/23", 9499, "Liga Alemana", "allProducts");
-const shirt12 = new Shirt ("12", "Bayern Munchen Titular", "22/23", 9999, "Liga Alemana", "allProducts");
+const shirt1 = new Shirt ("1", "Inter Visitante", "21/22", 8499, "Liga Italiana", "allProducts", "img/inter-shirt.jpg");
+const shirt2 = new Shirt ("2", "Milan Titular", "21/22", 8499, "Liga Italiana", "allProducts", "img/milan-shirt.jpg");
+const shirt3 = new Shirt ("3","Juventus Titular", "22/23", 8999, "Liga Italiana", "allProducts" , "img/juve-shirt.png");
+const shirt4 = new Shirt ("4", "Manchester City", "22/23", 9699,"Liga Inglesa", "allProducts" , "img/city-shirt.png");
+const shirt5 = new Shirt ("5", "Manchester United", "21/22", 8499, "Liga Inglesa", "allProducts" , "img/manunited-shirt.png");
+const shirt6 = new Shirt ("6", "Real Madrid Titular", "22/23", 9999, "Liga Española", "allProducts", "img/madrid-shirt.webp");
+const shirt7 = new Shirt ("7", "Barcelona Titular", "22/23", 9999, "Liga Española", "allProducts", "img/barcelona-shirt.png");
+const shirt8 = new Shirt ("8", "Atletico Madrid", "21/22", 7999, "Liga Española", "allProducts", "img/atletico-shirt.jpg");
+const shirt9 = new Shirt ("9","Porto Titular", "22/23", 7999, "Liga Portuguesa", "allProducts", "img/porto-shirt.png");
+const shirt10 = new Shirt ("10", "Benfica Titular", "22/23", 7999, "Liga Portuguesa","allProducts", "img/benfica-shirt.png");
+const shirt11 = new Shirt ("11", "Borussia Dortmund", "22/23", 9499, "Liga Alemana", "allProducts", "img/bvb-shirt.png");
+const shirt12 = new Shirt ("12", "Bayern Munich", "22/23", 9999, "Liga Alemana", "allProducts", "img/bayernMunchen-shirt.png");
 
 
 // Array
@@ -48,96 +49,15 @@ function showCards(shirtsToShow){
         let acumulador = ``;
         shirtsToShow.forEach((shirt) => {
             acumulador += `<div class="page-content">
-            <div class="product-container">
-            <img src="img/inter-shirt.jpg" alt="Camiseta de Internazionale Milano">
-            <h3>${shirt1.shirtName} - ${shirt1.season}</h3>
-            <h3>$${shirt1.price}</h3>
-            <button class="btnAddToCart" onclick="addShirtToCart(${shirt1.id})">Agregar al carrito</button>
-        </div>    
-
-        <div class="product-container">
-        <img src="img/milan-shirt.jpg" alt="Camiseta de Milan">
-        <h3>${shirt2.shirtName} - ${shirt2.season}</h3>
-        <h3>$${shirt2.price}</h3>
-        <button class="btnAddToCart" onclick="addShirtToCart(${shirt2.id})">Agregar al carrito</button>
-        </div>
-        
-        <div class="product-container">
-        <img class="juve-shirt" src="img/juve-shirt.png" alt="Camiseta de Juventus">
-        <h3>${shirt3.shirtName} - ${shirt3.season}</h3>
-        <h3>$${shirt3.price}</h3>
-        <button class="btnAddToCart" onclick="addShirtToCart(${shirt3.id})">Agregar al carrito</button>
-        </div>
-        
-        <div class="product-container">
-        <img src="img/city-shirt.png" alt="Camiseta del Manchester City">
-        <h3>${shirt4.shirtName} - ${shirt4.season}</h3>
-        <h3>$${shirt4.price}</h3>
-        <button class="btnAddToCart" onclick="addShirtToCart(${shirt4.id})">Agregar al carrito</button>
-        </div>
-        
-        
-        <div class="product-container">
-        <img src="img/united-shirt.png" alt="Camiseta del Manchester Utd">
-        <h3>${shirt5.shirtName} - ${shirt5.season}</h3>
-        <h3>$${shirt5.price}</h3>
-        <button class="btnAddToCart" onclick="addShirtToCart(${shirt5.id})">Agregar al carrito</button>
-        </div>
-        
-
-        <div class="product-container">
-            <img src="img/madrid-shirt.webp" alt="Camiseta de Real Madrid">
-            <h3>${shirt6.shirtName} - ${shirt6.season}</h3>
-            <h3>$${shirt6.price}</h3>
-            <button class="btnAddToCart" onclick="addShirtToCart(${shirt6.id})">Agregar al carrito</button>
-            </div>
-            
-            
-            <div class="product-container">
-            <img src="img/barcelona-shirt.png" alt="Camiseta de Barcelona">
-            <h3>${shirt7.shirtName} - ${shirt7.season}</h3>
-            <h3>$${shirt7.price}</h3>
-            <button class="btnAddToCart" onclick="addShirtToCart(${shirt7.id})">Agregar al carrito</button>
-            </div>
-
-        <div class="product-container">
-            <img src="img/atletico-shirt.jpg" alt="Camiseta de Atletico Madrid">
-            <h3>${shirt8.shirtName} - ${shirt8.season}</h3>
-            <h3>$${shirt8.price}</h3>
-            <button class="btnAddToCart" onclick="addShirtToCart(${shirt8.id})">Agregar al carrito</button>
-            </div>
-            
-            <div class="product-container">
-            <img src="img/porto-shirt.png" alt="Camiseta de Porto">
-            <h3>${shirt9.shirtName} - ${shirt9.season}</h3>
-            <h3>$${shirt9.price}</h3>
-            <button class="btnAddToCart" onclick="addShirtToCart(${shirt9.id})">Agregar al carrito</button>
-            </div>
-            
-            <div class="product-container">
-            <img src="img/benfica-shirt.png" alt="Camiseta de Benfica">
-            <h3>${shirt10.shirtName} - ${shirt10.season}</h3>
-            <h3>$${shirt10.price}</h3>
-            <button class="btnAddToCart" onclick="addShirtToCart(${shirt10.id})">Agregar al carrito</button>
-            </div>
-            
-            <div class="product-container">
-            <img src="img/bvb-shirt.png" alt="Camiseta de Borussia Dortmund">
-            <h3>${shirt11.shirtName} - ${shirt11.season}</h3>
-            <h3>$${shirt11.price}</h3>
-            <button class="btnAddToCart" onclick="addShirtToCart(${shirt11.id})">Agregar al carrito</button>
-            </div>
-            
-            <div class="product-container">
-            <img src="img/bayernMunchen-shirt.png" alt="Camiseta de Bayern Munchen">
-            <h3>${shirt12.shirtName} - ${shirt12.season}</h3>
-            <h3>$${shirt12.price}</h3>
-            <button class="btnAddToCart" onclick="addShirtToCart(${shirt12.id})">Agregar al carrito</button>
-            </div>
-            
-            </div>`
-        })
-        document.getElementById('card-container').innerHTML = acumulador
+                            <div class="product-container">
+                            <img src=${shirt.img} alt=${shirt.shirtName}>
+                            <h3>${shirt.shirtName} - ${shirt.season}</h3>
+                            <h3>$${shirt.price}</h3>
+                            <button class="btnAddToCart" onclick="addShirtToCart(${shirt.id})">Agregar al carrito</button>
+                            </div>    
+                            </div>`
+    })
+    document.getElementById('card-container').innerHTML = acumulador
 }
 
 
