@@ -110,28 +110,30 @@ a{
     /* BTN CART */
     .btnCart{
         font-size: 16px;
-        width: 37%;
+        width: 40%;
     }
 
     .nav-item{
-        font-size: 13px;
+        font-size: 10px;
     }
 
     /* BODY */
 
     /* PRODUCTOS */
 
+    #card-container{
+        display: grid;
+        grid-template-columns: 200px 200px;
+    }
+
     .page-content{
-        display: inline-block;
         margin: 10px 4px 5px 4px;
         font-family: 'Roboto', sans-serif;
     }
 
     .product-container{
-        margin: 8px;
-        padding: 2px 8px;
+        margin: 6px;
         text-align: center;
-        
     }
 
     .product-container img{
