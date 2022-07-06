@@ -35,6 +35,8 @@ a{
 
 /* BODY */
 
+/* BTN CART */
+
 .btnCart{
     font-size: 18px;
     text-align: center;
@@ -47,7 +49,6 @@ a{
     right: 15px;
     bottom: 16px;
 }
-
 
 
 /* PRODUCTOS */
@@ -82,6 +83,16 @@ a{
     background-color: #50bb52;
     color: black;
     border: 2px solid black;
+    font-size: 14px;
+}
+
+/* BTN FAV */
+.btnAddToFav{
+    padding: 7px;
+    background-color: #3185d3;
+    color: black;
+    border: 2px solid black;
+    font-size: 14px;
 }
 
 

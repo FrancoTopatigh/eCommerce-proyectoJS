@@ -54,6 +54,7 @@ function showCards(shirtsToShow){
                             <h3>${shirt.shirtName} - ${shirt.season}</h3>
                             <h3>$${shirt.price}</h3>
                             <button class="btnAddToCart" onclick="addShirtToCart(${shirt.id})">Agregar al carrito</button>
+                            <button class="btnAddToFav" id="addToFav">Agregar a Favoritos</button>
                             </div>    
                             </div>`
     })
@@ -107,7 +108,12 @@ function addShirtToCart(id) {
 }
 
 
-
+// EVENTO - BUTTON
+let btnAddToFav = document.getElementById("addToFav");
+btnAddToFav.addEventListener("click", answerClickFav);
+function answerClickFav() {
+    console.log("Se agregó a favoritos")
+}
 
 
 
