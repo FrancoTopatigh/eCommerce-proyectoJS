@@ -36,7 +36,7 @@ const shirt8 = new Shirt ("8", "Atletico Madrid", "21/22", 7999, "Liga Española
 const shirt9 = new Shirt ("9","Porto Titular", "22/23", 7999, "Liga Portuguesa", "allProducts", "img/porto-shirt.png");
 const shirt10 = new Shirt ("10", "Benfica Titular", "22/23", 7999, "Liga Portuguesa","allProducts", "img/benfica-shirt.png");
 const shirt11 = new Shirt ("11", "Borussia Dortmund", "22/23", 9499, "Liga Alemana", "allProducts", "img/bvb-shirt.png");
-const shirt12 = new Shirt ("12", "Bayern Munich", "22/23", 9999, "Liga Alemana", "allProducts", "img/bayernMunchen-shirt.png");
+const shirt12 = new Shirt ("12", "Bayern Munich", "22/23", 9999, "Liga Alemana", "allProducts", "img/bayern-shirt.png");
 
 
 // Array
