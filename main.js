@@ -2,8 +2,9 @@
 
 const iva = 1.21;
 
-// CARRITO VARIABLE
-let cart = [];
+// CARRITO VARIABLE + JSON
+const cartStorage = localStorage.getItem('cart');
+let cart = JSON.parse(cartStorage) ?? [];
 
 // Class y constructor
 
@@ -100,6 +101,11 @@ function addShirtToCart(id) {
     // Agregar el producto al cart
     cart.push(shirtIdFound);
 
+
+    // Agregamos el producto al localStorag
+    const cartJSON = JSON.stringify(cart);
+    localStorage.setItem('cart', cartJSON);
+
     // Calcular el total de los productose
     const totalCart = cart.reduce((acumulador, shirt) => acumulador + shirt.price, 0);
 
@@ -109,11 +115,15 @@ function addShirtToCart(id) {
 
 
 // EVENTO - BUTTON
+// TODO: AGREGAR FUNCIONALIDAD CON NAVBAR ITEM "VER FAVORITOS"
 let btnAddToFav = document.getElementById("addToFav");
 btnAddToFav.addEventListener("click", answerClickFav);
 function answerClickFav() {
-    console.log("Se agregó a favoritos")
+    console.log("Se agregó a favoritos!")
 }
+
+// STORAGE
+
 
 
 
