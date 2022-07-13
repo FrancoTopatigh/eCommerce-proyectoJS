@@ -116,13 +116,25 @@ function addShirtToCart(id) {
 
 // EVENTO - BUTTON
 // TODO: AGREGAR FUNCIONALIDAD CON NAVBAR ITEM "VER FAVORITOS"
-let btnAddToFav = document.getElementById("addToFav");
-btnAddToFav.addEventListener("click", answerClickFav);
-function answerClickFav() {
-    console.log("Se agregó a favoritos!")
-}
-
-// STORAGE
+const btnAddToFav = document.querySelectorAll("#addToFav");
+btnAddToFav.forEach(function(btnFav){
+    btnFav.addEventListener('click', function (){
+        Toastify({
+                    text: "Se agregó a favoritos!",
+                    duration: 3000,
+                    newWindow: true,
+                    close: true,
+                    gravity: "bottom",
+                    position: "right",
+                    stopOnFocus: true,
+                    style: {
+                    background: "black",
+                    color: "white"
+                    },
+                    onClick: function(){}
+                }).showToast();
+    })
+})
 
 
 
