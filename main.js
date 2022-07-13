@@ -101,7 +101,6 @@ function addShirtToCart(id) {
     // Agregar el producto al cart
     cart.push(shirtIdFound);
 
-
     // Agregamos el producto al localStorag
     const cartJSON = JSON.stringify(cart);
     localStorage.setItem('cart', cartJSON);
@@ -111,6 +110,14 @@ function addShirtToCart(id) {
 
     // Mostrar en el html la actualizacion de los valores cambiados
     document.getElementById("cartShirt").innerHTML = cart.length + "- $" + totalCart;
+
+    // SWEET ALERT
+    swal({
+        title: "Felicidades!",
+        text: "El producto fue agregado al carrito exitosamente!",
+        icon: "success",
+        button: "Cerrar",
+    });
 }
 
 
