@@ -52,7 +52,6 @@ a{
 
 
 /* PRODUCTOS */
-
 .page-content{
     display: inline-block;
     margin: 20px 8px 10px 8px;
@@ -63,8 +62,8 @@ a{
     margin: 15px;
     padding: 2px 16px;
     text-align: center;
-    
 }
+
 
 .product-container img{
     width: 300px;

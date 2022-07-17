@@ -27,7 +27,7 @@ class Shirt {
 // Objetos
 
 const shirt1 = new Shirt ("1", "Inter Titular", "22/23", 8999, "Liga Italiana", "allProducts", "img/inter-shirt.png");
-const shirt2 = new Shirt ("2", "Milan Titular", "22/22", 8999, "Liga Italiana", "allProducts", "img/milan-shirt.png");
+const shirt2 = new Shirt ("2", "Milan Titular", "22/23", 8999, "Liga Italiana", "allProducts", "img/milan-shirt.png");
 const shirt3 = new Shirt ("3","Juventus Titular", "22/23", 8999, "Liga Italiana", "allProducts" , "img/juve-shirt.png");
 const shirt4 = new Shirt ("4", "Manchester City", "22/23", 9699,"Liga Inglesa", "allProducts" , "img/city-shirt.png");
 const shirt5 = new Shirt ("5", "Manchester United", "22/23", 9699, "Liga Inglesa", "allProducts" , "img/manchester-shirt.png");
@@ -142,7 +142,6 @@ btnAddToFav.forEach(function(btnFav){
                 }).showToast();
     })
 })
-
 
 
 
