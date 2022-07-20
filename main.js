@@ -143,8 +143,3 @@ btnAddToFav.forEach(function(btnFav){
     })
 })
 
-
-
-
-
-
