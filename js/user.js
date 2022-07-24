@@ -13,3 +13,15 @@ fetch(url)
     })
 })
 .catch(err => console.log(err))
+
+
+// MUESTRA LA CANTIDAD DE PRODUCTOS EN EL CARRITO
+function onLoadCartNumbers(){
+    let productNumbers = localStorage.getItem('cartNumbers');
+
+    if(productNumbers){
+        document.querySelector(".cart span").textContent = productNumbers;
+    }
+}
+
+onLoadCartNumbers();
