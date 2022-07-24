@@ -135,6 +135,7 @@ let carts = document.querySelectorAll(".btnAddToCart")
 for(let i=0; i< carts.length; i++) {
     carts[i].addEventListener('click', () => {
         cartNumbers(shirts[i])
+        totalCost(shirts[i])
     })
 }
 
@@ -171,7 +172,6 @@ function setItems(shirt){
     cartItems = JSON.parse(cartItems);
 
     if(cartItems != null){
-
         if(cartItems[shirt.name] == undefined){
             cartItems = {
                 ...cartItems,
@@ -188,6 +188,21 @@ function setItems(shirt){
     }
     localStorage.setItem("shirtsInCart", JSON.stringify(cartItems))
 }
+
+
+// COSTO TOTAL DE LOS PRODUCTOS
+function totalCost(shirt){
+    let cartCost = localStorage.getItem("totalCost");
+
+
+    if(cartCost != null){
+        cartCost = parseInt(cartCost);
+        localStorage.setItem("totalCost", cartCost + shirt.price)
+    } else{
+        localStorage.setItem("totalCost",shirt.price)
+    }
+}
+
 
 onLoadCartNumbers();
 
