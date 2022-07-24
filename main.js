@@ -6,6 +6,7 @@ const iva = 1.21;
 const cartStorage = localStorage.getItem('cart');
 let cart = JSON.parse(cartStorage) ?? [];
 
+
 // Class y constructor
 
 class Shirt {
@@ -62,21 +63,6 @@ function showCards(shirtsToShow){
     document.getElementById('card-container').innerHTML = acumulador
 }
 
-
-
-// Logica para eliminar producto del carrito
-
-const deleteShirt = (shirt) => {
-    let index = shirts.indexOf(shirt);
-
-    if (index !== -1) {
-        shirts.splice(index, 1);
-        alert("Se ha elimado el producto del carrito con exito")
-    }
-}
-
-deleteShirt();
-
 // Funciones
 
 //  Funciones filtrado POR LIGA
@@ -122,7 +108,6 @@ function addShirtToCart(id) {
 
 
 // EVENTO - BUTTON
-// TODO: AGREGAR FUNCIONALIDAD CON NAVBAR ITEM "VER FAVORITOS"
 const btnAddToFav = document.querySelectorAll("#addToFav");
 btnAddToFav.forEach(function(btnFav){
     btnFav.addEventListener('click', function (){
@@ -142,4 +127,47 @@ btnAddToFav.forEach(function(btnFav){
                 }).showToast();
     })
 })
+
+
+let carts = document.querySelectorAll(".btnAddToCart")
+
+for(let i=0; i< carts.length; i++) {
+    carts[i].addEventListener('click', () => {
+        cartNumbers()
+    })
+}
+
+
+// FUNCION QUE MUESTRA LOS PRODUCTOS EN EL CARRITO
+function onLoadCartNumbers(){
+    let productNumbers = localStorage.getItem('cartNumbers');
+
+    if(productNumbers){
+        document.querySelector(".cart span").textContent = productNumbers;
+    }
+}
+
+// FUNCION CART NUMBERS - Muestra la cantidad de productos que tenemos en el carrito 
+function cartNumbers(){
+    let productNumbers = localStorage.getItem("cartNumbers")
+    productNumbers = parseInt(productNumbers)
+    localStorage.setItem("cartNumbers", 1)
+
+    if (productNumbers){
+        localStorage.setItem("cartNumbers", productNumbers + 1);
+        document.querySelectorAll(".cart span").textContent = productNumbers + 1;
+    } else {
+        localStorage.setItem("cartNumbers", 1);
+        document.querySelectorAll(".cart span").textContent = 1;
+    }
+}
+
+onLoadCartNumbers();
+
+
+
+
+
+
+
 
