@@ -3,6 +3,13 @@ let shoppingCart = document.getElementById("shopping-cart")
 
 let basket = JSON.parse(localStorage.getItem("shirtsInCart")) || []
 
+// let calculation = () => {
+//     let cartIcon = document.getElementById("cartAmount");
+//     cartIcon.innerHTML = shirts.map((x) => x.item).reduce((x, y) => x + y, 0);
+// }
+
+// calculation();
+
 // MUESTRA LA CANTIDAD DE PRODUCTOS EN EL CARRITO
 function onLoadCartNumbers(){
     let productNumbers = localStorage.getItem('cartNumbers');
@@ -15,8 +22,7 @@ function onLoadCartNumbers(){
 onLoadCartNumbers();
 
 let generateCartItems = () => {
-    if (basket.length != 0){
-        console.log("El carrito NO esta vacio")
+    if (basket.length !== 0){
     } else {
         shoppingCart.innerHTML = ``;
         label.innerHTML = `
