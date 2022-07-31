@@ -6,7 +6,7 @@ fetch(url)
 .then((res) => res.json())
 .then((data) => {
     data.forEach(user => {
-        // DATOS PROVEEDORES
+        // DATA PROVEEDORES
         const paragraph = document.createElement("p")
         paragraph.innerHTML = user.name + "<br/>" + "Email:  " + user.email + "  " + " - "  + "Telefono:  " + user.phone
         aplication.appendChild(paragraph)
@@ -15,12 +15,12 @@ fetch(url)
 .catch(err => console.log(err))
 
 
-// MUESTRA LA CANTIDAD DE PRODUCTOS EN EL CARRITO
+// FUNCTION - SHOWS QUANTITY OF PRODUCTS IN OUR CART
 function onLoadCartNumbers(){
     let productNumbers = localStorage.getItem('cartNumbers');
 
     if(productNumbers){
-        document.querySelector(".cart span").textContent = productNumbers;
+        document.querySelector(".cartAmount").textContent = productNumbers;
     }
 }
 
