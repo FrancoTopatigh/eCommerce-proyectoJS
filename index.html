@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- SEO TAGS -->
+    <!-- SEO TAGS -->
     <meta name="description" content="Tienda online de Canebola! Entrá y mira las mejores camisetas del futbol europeo!">
     <meta name="keywords" content="Canebola, Futbol, eCommerce, Camisetas, Tienda online, Serie A, Premier League, Bundesliga, Liga NOS, LaLiga Santander">
     <meta name="author" content="Franco Topatigh">
@@ -91,6 +91,57 @@
             <div id="card-container"></div>
     </section>
 
+
+
+    <!-- SHOPPING CART -->
+    <section class="shopping-cart">
+        <div class="container">
+            <h1 class="text-center">Carrito</h1>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <div class="shopping-cart-header">
+                        <h6>Producto</h6>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="shopping-cart-header">
+                        <h6 class="text-truncate">Precio</h6>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="shopping-cart-header">
+                        <h6>Cantidad</h6>
+                    </div>
+                </div>
+            </div>
+            <!-- ? START SHOPPING CART ITEMS -->
+            <div class="shopping-cart-items shoppingCartItemsContainer">
+            
+            </div>
+            <!-- ? END SHOPPING CART ITEMS -->
+
+            <!-- START TOTAL -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="shopping-cart-total d-flex align-items-center">
+                        <p class="mb-0">Total (+ IVA 21%) =</p>
+                        <p class="ml-4 mb-0 shoppingCartTotal">0$</p>
+                        <button class="btn btn-danger ml-auto emptyCart" type="button">Vaciar Carrito</button>
+                        <button class="btn btn-success ml-auto buyButton" type="button">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- END TOTAL -->
+            
+            </div>
+            
+    </section>
+    <!-- END SECTION SHOPPING CART -->
+
+
+
 <!-- FOOTER -->
     <footer id="footer">
         <p>Copyright &copy; Canebola 2022</p>
@@ -99,6 +150,7 @@
 
 <!-- SCRIPT SWEET ALERT -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!-- SCRIPT TOASTIFY -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <!-- SCRIPT BS -->

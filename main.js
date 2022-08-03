@@ -185,53 +185,143 @@ onLoadCartNumbers();
 
 // --------------------------------------------------------
 
-let cartIcon = document.querySelector("#cart-icon");
-let cart2 = document.querySelector(".cart");
-let closeCart = document.querySelector("#close-cart");
+// SHOPPING CART 
 
-// OPEN POPUP
-cartIcon.onclick = () => {
-    cart2.classList.add("active")
-}
-// CLOSE POPUP
-closeCart.onclick = () => {
-    cart2.classList.remove("active")
+const addToShoppingCartButtons = document.querySelectorAll(".add-cart");
+addToShoppingCartButtons.forEach((addToCartButton) => {
+    addToCartButton.addEventListener("click", addToCartClicked)
+})
+
+const confirmPurchaseButton = document.querySelector(".buyButton");
+confirmPurchaseButton.addEventListener("click", confirmPurchaseClicked);
+
+const emptyCartButton = document.querySelector(".emptyCart");
+emptyCartButton.addEventListener("click", emptyCart);
+
+const shoppingCartItemsContainer = document.querySelector(".shoppingCartItemsContainer");
+
+function addToCartClicked(event){
+    const button = event.target;
+    const item = button.closest(".product-container")
+    const shirtTitle = item.querySelector(".product-title").textContent;
+    const shirtPrice = item.querySelector(".price").textContent;
+    const shirtImg = item.querySelector(".product-img").src;
+    addItemsToShoppingCart(shirtTitle, shirtPrice, shirtImg)
 }
 
-if(document.readyState == "loading"){
-    document.addEventListener("DOMContentLoaded", ready);
-} else{
-    ready();
-}
+function addItemsToShoppingCart(shirtTitle, shirtPrice, shirtImg){
+    const elementTitle = shoppingCartItemsContainer.getElementsByClassName("shoppingCartItemTitle")
+    for(let i = 0; i < elementTitle.length; i++){
+        if(elementTitle[i].innerText === shirtTitle){
+            let elementQuantity = elementTitle[i].parentElement.parentElement.parentElement.querySelector(".shoppingCartItemQuantity")
+            elementQuantity.value++;
+                // TOASTIFY
+                Toastify({
+                    text: "Se aumentó correctamente la cantidad",
+                    duration: 4000,
+                    newWindow: true,
+                    close: true,
+                    gravity: "bottom",
+                    position: "right",
+                    stopOnFocus: true,
+                    style: {
+                    background: "rgb(109, 155, 218)",
+                    color: "black"
+                    },
+                    onClick: function(){}
+                }).showToast();
 
-// FUNCTION 
-function ready(){
-    // REMOVE ITEM FROM CART
-    let removeCartButton = document.getElementsByClassName("cart-remove");
-    for (let i = 0; i < removeCartButton.length; i++){
-        let button = removeCartButton[i]
-        button.addEventListener("click", removeCartItems);
-    }
-    // QUANTITY CHANGES
-    let quantityInputs = document.getElementsByClassName("cart-quantity");
-    for (let i = 0; i < quantityInputs.length; i++){
-        let input = quantityInputs[i];
-        input.addEventListener("change", quantityChanged)
-    }   
-        // Add to cart
-        let addToCart = document.getElementsByClassName("add-cart")
-        for (let i = 0; i < addToCart.length; i++){
-            let button = addToCart [i];
-            button.addEventListener("click", addCartClicked)
+            updateShoppingCartTotal()
+            return;
         }
-        // Buy Button Work
-        document.getElementsByClassName("btn-buy")[0].addEventListener("click", buyButtonClicked)
+    }
+
+    const shoppingCartRow = document.createElement("div");
+    const shoppingCartContent = `
+    <div class="row shoppingCartItem">
+        <div class="col-6">
+                <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+                            <img src=${shirtImg} class="shopping-cart-image">
+                            <h6 class="shopping-cart-item-title shoppingCartItemTitle text-truncate ml-3 mb-0">${shirtTitle}
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="shopping-cart-price d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+                            <p class="item-price mb-0 shoppingCartItemPrice">${shirtPrice}</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div
+                            class="shopping-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
+                            <input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number"
+                                value="1">
+                            <button class="btn btn-danger buttonDelete" type="button">X</button>
+                        </div>
+        </div>
+    </div> `;
+    shoppingCartRow.innerHTML = shoppingCartContent
+    shoppingCartItemsContainer.append(shoppingCartRow);
+
+    shoppingCartRow.querySelector(".buttonDelete").addEventListener("click", removeShoppingCartItem);
+    shoppingCartRow.querySelector(".shoppingCartItemQuantity").addEventListener("change", quantityChanged)
+
+    updateShoppingCartTotal();
 }
-// Buy Button
-function buyButtonClicked(){
-    swal({
-        title: "Felicidades!",
-        text: "Gracias por comprar en Canebola! \n En breve te llegará la orden de compra a tu email",
+
+// FUNCTION TO UPDATE PRICE
+function updateShoppingCartTotal(){
+    let total = 0;
+    const shoppingCartTotal = document.querySelector(".shoppingCartTotal");  
+    const shoppingCartItems = document.querySelectorAll(".shoppingCartItem");
+
+    shoppingCartItems.forEach((shoppingCartItem) => {
+        const shoppingCartItemPriceElement = shoppingCartItem.querySelector(".shoppingCartItemPrice");
+        const shoppingCartItemPrice = Number(shoppingCartItemPriceElement.textContent.replace("$", ""));
+        const shoppingCartItemQuantityElement =shoppingCartItem.querySelector(".shoppingCartItemQuantity");
+        const shoppingCartItemQuantity = Number(shoppingCartItemQuantityElement.value)
+        
+        total = total + shoppingCartItemPrice * shoppingCartItemQuantity * iva
+    })
+    shoppingCartTotal.innerHTML = `${total.toFixed(2)}$`
+};
+
+// FUNCTION TO REMOVE ITEMS
+function removeShoppingCartItem(event){
+    const buttonClicked = event.target
+    buttonClicked.closest(".shoppingCartItem").remove();
+    // TOASTIFY
+    Toastify({
+        text: "Se eliminó el producto",
+        duration: 4000,
+        newWindow: true,
+        close: true,
+        gravity: "bottom",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+        background: "red",
+        color: "black"
+        },
+        onClick: function(){}
+    }).showToast();
+    updateShoppingCartTotal();
+}
+
+// FUNCTION TO CHANGE QUANTITY OF ITEMS
+function quantityChanged(event){
+    const input = event.target
+    input.value <= 0 ? (input.value = 1) : null;
+    updateShoppingCartTotal();
+}
+
+// FUNCTION TO CONFIRM PURCHASE OF ITEMS
+function confirmPurchaseClicked(){
+    shoppingCartItemsContainer.innerHTML = "";
+    updateShoppingCartTotal();
+    Swal.fire({
+        title: "Gracias por comprar en Canebola!",
+        text: "En breve te llegará la orden de compra a tu email",
         icon: "success",
         button: "Cerrar",
     });
@@ -239,72 +329,18 @@ function buyButtonClicked(){
     while (cartContent.hasChildNodes()){
         cartContent.removeChild(cartContent.firstChild)
     }
-    updateTotal()
 }
 
-// REMOVE SHIRTS FROM CART
-function removeCartItems(event){
-    let buttonClicked = event.target
-    buttonClicked.parentElement.remove();
-    updateTotal();
+// FUNCTION EMPTY CART
+function emptyCart(){
+    shoppingCartItemsContainer.innerHTML = "";
+    updateShoppingCartTotal();
+    Swal.fire({
+        title: "Se vació el carrito",
+        icon: "warning",
+        button: "Cerrar",
+    });
 }
-// QUANTITY CHANGES FUNCTION
-function quantityChanged(event){
-    let input = event.target
-    if(isNaN(input.value) || input.value <= 0){
-        input.value = 1;
-    }
-    updateTotal();
-}
-function addCartClicked(event){
-    const button = event.target;
-    let shopProducts = button.parentElement;
-    let title = shopProducts.getElementsByClassName("product-title")[0].innerText;
-    let price = shopProducts.getElementsByClassName("price")[0].innerText;
-    let productImg = shopProducts.getElementsByClassName("product-img")[0].src;
-    addProductToCart(title,price,productImg);
-    updateTotal();
-}
-function addProductToCart(title, price, productImg){
-    let cartShopBox = document.createElement("div");
-    cartShopBox.classList.add("cart-box");
-    let cartItems = document.getElementsByClassName("cart-content")[0];
-    let cartItemsNames = cartItems.getElementsByClassName("cart-product-title");
-    for (let i = 0; i < cartItemsNames.length; i++){
-        if (cartItemsNames[i].innerText == title){
-        alert("El producto ya fue agregado al carrito")
-        return;
-        }
-    }
-const cartBoxContent = 
-                        `<img src="${productImg}" alt="" class="cart-img">
-                        <div class="detail-box">
-                            <div class="cart-product-title">${title}</div>
-                            <div class="cart-price">${price}</div>
-                            <input type="number" value="1" class="cart-quantity">
-                        </div>
-                        <!-- Remove Cart -->
-                        <i class='bx bxs-trash-alt cart-remove'></i> `
-    cartShopBox.innerHTML = cartBoxContent
-    cartItems.append(cartShopBox);
-    cartShopBox.getElementsByClassName("cart-remove")[0].addEventListener("click", removeCartItems);
-    cartShopBox.getElementsByClassName("cart-quantity")[0].addEventListener("change", quantityChanged);
-}
-// UPDATE TOTAL
-function updateTotal(){
-    let cartContent = document.getElementsByClassName("cart-content")[0];
-    let cartBoxes = cartContent.getElementsByClassName("cart-box");
-    let total = 0
-    for (let i = 0; i < cartBoxes.length; i++){
-        let cartBox = cartBoxes[i];
-        let priceElement = cartBox.getElementsByClassName("cart-price")[0];
-        let quantityElement = cartBox.getElementsByClassName("cart-quantity")[0];
-        let price = parseFloat(priceElement.innerText.replace("$", ""));
-        let quantity = quantityElement.value;
-        total = total + (price * quantity * iva);
-    }
-        // IF price contain some cents value...
-        total = Math.round(total * 100) / 100;
-        document.getElementsByClassName("total-price")[0].innerText = " (+ IVA 21%) = " + "$ " + total ;
-}
+
+
 
