@@ -328,6 +328,8 @@ function confirmPurchaseClicked(){
         text: "En breve te llegará la orden de compra a tu email",
         icon: "success",
         button: "Cerrar",
+    }).then(function(){
+        location.reload()
     });
     let cartContent = document.getElementsByClassName("cart-content")[0]
     while (cartContent.hasChildNodes()){
@@ -347,5 +349,7 @@ function emptyCart(){
         title: "Se vació el carrito",
         icon: "warning",
         button: "Cerrar",
+    }).then(function(){
+        location.reload()
     });
 }
