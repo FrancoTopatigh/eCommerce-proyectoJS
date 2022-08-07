@@ -329,7 +329,8 @@ function confirmPurchaseClicked(){
         icon: "success",
         button: "Cerrar",
     }).then(function(){
-        location.reload()
+        location.reload();
+        window.scrollTo(0,0);
     });
     let cartContent = document.getElementsByClassName("cart-content")[0]
     while (cartContent.hasChildNodes()){
@@ -350,6 +351,7 @@ function emptyCart(){
         icon: "warning",
         button: "Cerrar",
     }).then(function(){
-        location.reload()
-    });
+        location.reload();
+        window.scrollTo(0,0);
+    })
 }
