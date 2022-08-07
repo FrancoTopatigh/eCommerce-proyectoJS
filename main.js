@@ -318,6 +318,10 @@ function quantityChanged(event){
 // FUNCTION TO CONFIRM PURCHASE OF ITEMS
 function confirmPurchaseClicked(){
     shoppingCartItemsContainer.innerHTML = "";
+    localStorage.removeItem("cart");
+    localStorage.removeItem("shirtsInCart");
+    localStorage.removeItem("cartNumbers");
+    localStorage.removeItem("totalCost");
     updateShoppingCartTotal();
     Swal.fire({
         title: "Gracias por comprar en Canebola!",
@@ -334,6 +338,10 @@ function confirmPurchaseClicked(){
 // FUNCTION EMPTY CART
 function emptyCart(){
     shoppingCartItemsContainer.innerHTML = "";
+    localStorage.removeItem("cart");
+    localStorage.removeItem("shirtsInCart");
+    localStorage.removeItem("cartNumbers");
+    localStorage.removeItem("totalCost");
     updateShoppingCartTotal();
     Swal.fire({
         title: "Se vació el carrito",
@@ -341,6 +349,3 @@ function emptyCart(){
         button: "Cerrar",
     });
 }
-
-
-
